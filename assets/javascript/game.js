@@ -7,60 +7,121 @@
 // If the total score goes over the # to match - increment the losses score by 1 and display "You lost!"
 
 $(document).ready(function() {
-    // Add a header div into the empty-div in the html page
-    var gameHeaderDiv = document.getElementById("empty-div");
-    // Add the text & attributes to the header
-    gameHeaderDiv.textContent = "CrystalsCollector!";
-    gameHeaderDiv.setAttribute("id", "gameHeader");
-    // Add a 2nd div to the page by appending it to the gameHeaderDiv
-    var instrDiv = document.createElement("div");
-    instrDiv.setAttribute("id", "instrDiv");
+
+    // Make our variables global to the runtime of our application
+    var userTotalNum = 0;
+    var wins = 0;
+    var losses = 0;
+    var uniqueCrystalNum = [];
+    var randomNum;
+
+    // Add instrutional text in the html page
     instrDiv.textContent = "You will be given a random number at the start of the game.";
-    gameHeaderDiv.append(instrDiv);
     $("#instrDiv").append("<p/><br>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.");
     $("#instrDiv").append("<p/><br>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.");
     $("#instrDiv").append("<p/><br>The value of each crystal is hidden from you until you click on it.");   
     $("#instrDiv").append("<p/><br>Each time when the game starts, the game will change the values of each crystal.");  
+
+    // // randomMatchNum generator
+    // function matchNum(min, max) {
+    //     return Math.floor(Math.random() * (121 - 19)) + 19;
+    // }
+    // call function getRndInteger & print to html page
+    var matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
+    $("#ranMatchNum").text(matchNum);
     
-    // Add the randomMatchNum div
-    var ranMatchNum = document.createElement("div");
-    ranMatchNum.setAttribute("id", "ranMatchNum");
-    ranMatchNum.textContent = "placeholer for random match #";
-    instrDiv.after(ranMatchNum);
-
-    var winLossNums = document.createElement("span");
-    winLossNums.setAttribute("id", "winLossNums");
-    winLossNums.textContent = "wins/losses";
-    ranMatchNum.append(winLossNums);
+    // print wins * losses
+    $("#winNumText").text("Wins: ");
+    $("#lossNumText").text("Losses:");
+    $("#lossNum").text(losses);
+    $("#winNum").text(wins);
+ 
     
-    var pinkPearCrystal = document.createElement("span");
-    pinkPearCrystal.setAttribute("id", "pinkPearCrystal");
-    pinkPearCrystal.setAttribute("class", "image");
-    ranMatchNum.after(pinkPearCrystal);
+    function reset() {
+        matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
+        console.log(matchNum);
+        $("#ranMatchNum").text(matchNum);
+        userTotalNum = 0;
+    //     var uniqueCrystalNum = [];
+    //     for (var i = 0; i < 4; i++) {
+    //         var randomNum = Math.floor(Math.random() * 12) + 1;
+    //         var current = randomNum[i];
+    //         uniqueCrystalNum.push(randomNum);
+    //         var compareNums = $.inArray(current, uniqueCrystalNum);
+    //         if (current !== randomNum && randomNum !== compareNums ) {
+    //             console.log("unique # " +uniqueCrystalNum);
+    //         } 
+    //     }  
+    //         // assigning the crystals random values with the c
+    // var crystalValue = {};
+    // crystalValue[1] = uniqueCrystalNum[0];
+    // crystalValue[2] = uniqueCrystalNum[1];
+    // crystalValue[3] = uniqueCrystalNum[2];
+    // crystalValue[4] = uniqueCrystalNum[3];
+  
+        $("#totalScore").text(userTotalNum);
+    }
+    // get 4 unique numbers to assign to crystals
+    var uniqueCrystalNum = [];
+    for (var i = 0; i < 4; i++) {
+        var randomNum = Math.floor(Math.random() * 12) + 1;
+        // turqCrystal.attr('class', current);
+        var current = randomNum[i];
+        // gemIndex.attr('class', current);
+        // tried to enforce unique numbers - not working even with TA's assistance...
+        uniqueCrystalNum.push(randomNum);
+        var compareNums = $.inArray(current, uniqueCrystalNum);
+        if (current !== randomNum && randomNum !== compareNums ) {
+            console.log("unique # " +uniqueCrystalNum);
+        } 
+    }
+    // assigning the crystals random values with the c
+    var crystalValue = {};
+    crystalValue[1] = uniqueCrystalNum[0];
+    crystalValue[2] = uniqueCrystalNum[1];
+    crystalValue[3] = uniqueCrystalNum[2];
+    crystalValue[4] = uniqueCrystalNum[3];
+    
+    function getCrystalEvent(crystalKey) {
+        return function () {
+            userTotalNum = userTotalNum + crystalValue[crystalKey];
+            console.log("new user total:" + userTotalNum);
+            $("#totalScore").text(userTotalNum);
+            if (userTotalNum > matchNum) {
+                loser();
+            } else if
+                (userTotalNum === matchNum) {
+                winner();
+            }
+            console.log("unique event # " +matchNum);
+            console.log("losses " +losses);
+            console.log("wins " + wins);
+        }
+    }
 
-    var turqCrystal = document.createElement("span");
-    turqCrystal.setAttribute("id", "turqCrystal");
-    turqCrystal.setAttribute("class", "image");
-    pinkPearCrystal.after(turqCrystal);
+    function loser() {
+        losses++;
+        $("#lossNum").text(losses);
+        reset()
+    }
+    function winner() {
+        wins++;
+        $("#winNum").text(wins);
+        reset()
+    }
+    console.log("userTotalNum " +userTotalNum);
+    
+        $("#pinkPearCrystal").on("click", getCrystalEvent(1));
+        $("#multiCrystal").on("click", getCrystalEvent(2));
+        $("#turqCrystal").on("click", getCrystalEvent(3));
+        $("#purpCrystal").on("click", getCrystalEvent(4));
 
-    var multiCrystal = document.createElement("span");
-    multiCrystal.setAttribute("id", "multiCrystal");
-    multiCrystal.setAttribute("class", "image");
-    turqCrystal.after(multiCrystal);
+        console.log(crystalValue[1]);
+        console.log(crystalValue[2]);
+        console.log(crystalValue[3]);
+        console.log(crystalValue[4]);
 
-    var purpCrystal = document.createElement("span");
-    purpCrystal.setAttribute("id", "purpCrystal");
-    purpCrystal.setAttribute("class", "image");
-    multiCrystal.after(purpCrystal);
+    totalScoreText.textContent = "Your total score is:"
+    $("#totalScore").text(userTotalNum);    
 
-    var totalScoreText = document.createElement("span");
-    totalScoreText.setAttribute("id", "totalScoreText");
-    totalScoreText.textContent = "Your total score is";
-    purpCrystal.after(totalScoreText);
-
-    var totalScore = document.createElement("span");
-    totalScore.setAttribute("id", "totalScore");
-    totalScore.setAttribute("class", "clearfix");
-    totalScore.textContent = "score placeholder";
-    totalScoreText.after(totalScore);
 });

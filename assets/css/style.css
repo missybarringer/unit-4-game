@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: blue;
+    background-image: url("../images/dark-honeycomb.png");
 }
 
 #gameHeader {
@@ -30,38 +30,23 @@ div {
 }
 
 #ranMatchNum {
-    position: relative;
     width: 180px;
-    top: 10px;
     height: 100px;
     background-color: green;
     color: black;
     font-size: 24px;
-    padding: 8px;
-    bottom: 50px;
 }
 
 #winLossNums {
-    position: absolute;
-    top: 0px;
-    margin-left: 10px;
     width: 140px;
     height: 100px;
     background-color: rgb(204, 129, 211);
-    left: 180px;
+    left: 10px;
     color: black;
     font-size: 24px;
     padding: 8px;
 }
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
 #pinkPearCrystal.image {
-    position: relative;
     content:url(../images/pinkPearCrystal.png);
     width: 100px;
     height: 100px;
@@ -70,8 +55,11 @@ div {
     left: 0px;
 }
 
+#test {
+    color: white;
+}
+
 #turqCrystal.image {
-    position: relative;
     content:url(../images/turqCrystal.png);
     width: 100px;
     height: 100px;
@@ -81,9 +69,6 @@ div {
 }
 
 #multiCrystal.image {
-    clear: both;
-    position: relative;
-    float: left;
     content:url(../images/multiCrystal.png);
     width: 100px;
     height: 100px;
@@ -92,8 +77,6 @@ div {
     left: 0px;
 }
 #purpCrystal.image {
-    position: relative;
-    float: right;
     content:url(../images/purpCrystal.png);
     width: 100px;
     height: 100px;
@@ -103,25 +86,22 @@ div {
 }
 
 #totalScoreText {
-    position: relative;
     width: 260px;
+    margin: auto;
     top: 10px;
     height: 18px;
     background-color: green;
-    color: black;
-    font-size: 12px;
-    padding: 8px;
-    bottom: 50px;
+    color: white;
+    font-size: 14px;
 }
 
 #totalScore {
-    clear: both;
     width: 260px;
     top: 20px;
     height: 100px;
     background-color: green;
-    color: black;
-    font-size: 12px;
+    color: white;
+    font-size: 18px;
     padding: 8px;
-    bottom: 50px;
+}
 }
