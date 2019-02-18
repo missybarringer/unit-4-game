@@ -16,18 +16,16 @@ $(document).ready(function() {
     var randomNum;
 
     // Add instrutional text in the html page
+    $("#instrDiv").appendTo("#instrDivHeader");
     instrDiv.textContent = "You will be given a random number at the start of the game.";
     $("#instrDiv").append("<p/><br>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.");
     $("#instrDiv").append("<p/><br>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.");
     $("#instrDiv").append("<p/><br>The value of each crystal is hidden from you until you click on it.");   
     $("#instrDiv").append("<p/><br>Each time when the game starts, the game will change the values of each crystal.");  
 
-    // // randomMatchNum generator
-    // function matchNum(min, max) {
-    //     return Math.floor(Math.random() * (121 - 19)) + 19;
-    // }
     // call function getRndInteger & print to html page
-    var matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
+    $("#ranMatchNumText").text("Number to Match");
+    var matchNum = Math.floor(Math.random() * (21 - 19)) + 19;
     $("#ranMatchNum").text(matchNum);
     
     // print wins * losses
@@ -35,32 +33,32 @@ $(document).ready(function() {
     $("#lossNumText").text("Losses:");
     $("#lossNum").text(losses);
     $("#winNum").text(wins);
- 
     
     function reset() {
-        matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
+        matchNum = Math.floor(Math.random() * (21 - 19)) + 19;
         console.log(matchNum);
         $("#ranMatchNum").text(matchNum);
         userTotalNum = 0;
-    //     var uniqueCrystalNum = [];
-    //     for (var i = 0; i < 4; i++) {
-    //         var randomNum = Math.floor(Math.random() * 12) + 1;
-    //         var current = randomNum[i];
-    //         uniqueCrystalNum.push(randomNum);
-    //         var compareNums = $.inArray(current, uniqueCrystalNum);
-    //         if (current !== randomNum && randomNum !== compareNums ) {
-    //             console.log("unique # " +uniqueCrystalNum);
-    //         } 
-    //     }  
-    //         // assigning the crystals random values with the c
-    // var crystalValue = {};
-    // crystalValue[1] = uniqueCrystalNum[0];
-    // crystalValue[2] = uniqueCrystalNum[1];
-    // crystalValue[3] = uniqueCrystalNum[2];
-    // crystalValue[4] = uniqueCrystalNum[3];
-  
+        var uniqueCrystalNum = [];
+        for (var i = 0; i < 4; i++) {
+            var randomNum = Math.floor(Math.random() * 12) + 1;
+            var current = randomNum[i];
+            uniqueCrystalNum.push(randomNum);
+            var compareNums = $.inArray(current, uniqueCrystalNum);
+            if (current !== randomNum && randomNum !== compareNums ) {
+                console.log("unique # " +uniqueCrystalNum);
+            } 
+        }    
+        // assigning the crystals new random values
+        crystalValue = [];
+        crystalValue[1] = uniqueCrystalNum[0];
+        crystalValue[2] = uniqueCrystalNum[1];
+        crystalValue[3] = uniqueCrystalNum[2];
+        crystalValue[4] = uniqueCrystalNum[3];
+        // printing the users Total score to html page       
         $("#totalScore").text(userTotalNum);
     }
+    
     // get 4 unique numbers to assign to crystals
     var uniqueCrystalNum = [];
     for (var i = 0; i < 4; i++) {
@@ -82,8 +80,17 @@ $(document).ready(function() {
     crystalValue[3] = uniqueCrystalNum[2];
     crystalValue[4] = uniqueCrystalNum[3];
     
+    $("#pinkPearCrystal").on("click", getCrystalEvent(1));
+    $("#multiCrystal").on("click", getCrystalEvent(2));
+    $("#turqCrystal").on("click", getCrystalEvent(3));
+    $("#purpCrystal").on("click", getCrystalEvent(4));
+    
     function getCrystalEvent(crystalKey) {
         return function () {
+            console.log(crystalValue[1]);
+            console.log(crystalValue[2]);
+            console.log(crystalValue[3]);
+            console.log(crystalValue[4]);
             userTotalNum = userTotalNum + crystalValue[crystalKey];
             console.log("new user total:" + userTotalNum);
             $("#totalScore").text(userTotalNum);
@@ -102,24 +109,18 @@ $(document).ready(function() {
     function loser() {
         losses++;
         $("#lossNum").text(losses);
+        $("#winLoss").text("You lost !!!");
         reset()
     }
     function winner() {
         wins++;
         $("#winNum").text(wins);
+        $("#winLoss").text("You WIN !!!!");
         reset()
     }
     console.log("userTotalNum " +userTotalNum);
     
-        $("#pinkPearCrystal").on("click", getCrystalEvent(1));
-        $("#multiCrystal").on("click", getCrystalEvent(2));
-        $("#turqCrystal").on("click", getCrystalEvent(3));
-        $("#purpCrystal").on("click", getCrystalEvent(4));
 
-        console.log(crystalValue[1]);
-        console.log(crystalValue[2]);
-        console.log(crystalValue[3]);
-        console.log(crystalValue[4]);
 
     totalScoreText.textContent = "Your total score is:"
     $("#totalScore").text(userTotalNum);    
