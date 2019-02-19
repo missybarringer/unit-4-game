@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     // call function getRndInteger & print to html page
     $("#ranMatchNumText").text("Number to Match");
-    var matchNum = Math.floor(Math.random() * (21 - 19)) + 19;
+    var matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
     $("#ranMatchNum").text(matchNum);
     
     // print wins * losses
@@ -35,20 +35,16 @@ $(document).ready(function() {
     $("#winNum").text(wins);
     
     function reset() {
-        matchNum = Math.floor(Math.random() * (21 - 19)) + 19;
+        matchNum = Math.floor(Math.random() * (121 - 19)) + 19;
         console.log(matchNum);
         $("#ranMatchNum").text(matchNum);
         userTotalNum = 0;
         var uniqueCrystalNum = [];
-        for (var i = 0; i < 4; i++) {
-            var randomNum = Math.floor(Math.random() * 12) + 1;
-            var current = randomNum[i];
-            uniqueCrystalNum.push(randomNum);
-            var compareNums = $.inArray(current, uniqueCrystalNum);
-            if (current !== randomNum && randomNum !== compareNums ) {
-                console.log("unique # " +uniqueCrystalNum);
-            } 
-        }    
+        while(uniqueCrystalNum.length < 4) {
+        var random = Math.floor(Math.random() * 12) +1;
+        if (uniqueCrystalNum.indexOf(random) === -1) uniqueCrystalNum.push(random);
+                    console.log("unique # " +uniqueCrystalNum);
+    }
         // assigning the crystals new random values
         crystalValue = [];
         crystalValue[1] = uniqueCrystalNum[0];
@@ -61,17 +57,10 @@ $(document).ready(function() {
     
     // get 4 unique numbers to assign to crystals
     var uniqueCrystalNum = [];
-    for (var i = 0; i < 4; i++) {
-        var randomNum = Math.floor(Math.random() * 12) + 1;
-        // turqCrystal.attr('class', current);
-        var current = randomNum[i];
-        // gemIndex.attr('class', current);
-        // tried to enforce unique numbers - not working even with TA's assistance...
-        uniqueCrystalNum.push(randomNum);
-        var compareNums = $.inArray(current, uniqueCrystalNum);
-        if (current !== randomNum && randomNum !== compareNums ) {
-            console.log("unique # " +uniqueCrystalNum);
-        } 
+    while(uniqueCrystalNum.length < 4) {
+        var random = Math.floor(Math.random() * 12) +1;
+        if (uniqueCrystalNum.indexOf(random) === -1) uniqueCrystalNum.push(random);
+                    console.log("unique # " +uniqueCrystalNum);
     }
     // assigning the crystals random values with the c
     var crystalValue = {};
