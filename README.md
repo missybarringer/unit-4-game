@@ -49,10 +49,10 @@ All contributions and suggestions are welcome!
 For direct contributions, please fork the repository and file a pull request.
 ____________________________________
 ## Contact
-* [Website published here] (https://missybarringer.github.io/unit-4-game/)
+* [Website published here](https://missybarringer.github.io/unit-4-game/)
 * e-mail: barringer.margaret@gmail.com
 * Twitter: @goatfeatherfarm
 * Facebook: @goatfeatherfarm
 * Instagram: @goatfeatherfarm
-* Added to [Personal Portfolio webpage] (https://missybarringer.github.io/)
+* Added to [Personal Portfolio webpage](https://missybarringer.github.io/)
 
