@@ -5,7 +5,7 @@
 ____________________________________
 ## Technology
 * CSS3, HTML5, Javascript, Bootstrap, jQuery
-* GitHub Link: https://github.com/missybarringer/unit-4-game.git
+* [GitHub Link](https://github.com/missybarringer/unit-4-game.git)
 ____________________________________
 ## About - Vandy Bootcamp assignment with the following instructions...
 1. [Watch the demo](https://youtu.be/yNI0l2FMeCk).
@@ -49,10 +49,10 @@ All contributions and suggestions are welcome!
 For direct contributions, please fork the repository and file a pull request.
 ____________________________________
 ## Contact
-* Website published at: https://missybarringer.github.io/unit-4-game/
+* [Website published here] (https://missybarringer.github.io/unit-4-game/)
 * e-mail: barringer.margaret@gmail.com
 * Twitter: @goatfeatherfarm
 * Facebook: @goatfeatherfarm
 * Instagram: @goatfeatherfarm
-* Added to Personal Portfolio webpage: https://missybarringer.github.io/
+* Added to [Personal Portfolio webpage] (https://missybarringer.github.io/)
 

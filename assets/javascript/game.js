@@ -5,6 +5,7 @@
 // Show the total score 0 then increment everytime a crystal is clicked by its assigned value
 // If the total score equals the # to match - increment the wins counter by 1 and display "You won!"
 // If the total score goes over the # to match - increment the losses score by 1 and display "You lost!"
+// Added to portfolio page at https://missybarringer.github.io/
 
 $(document).ready(function() {
 
@@ -13,7 +14,6 @@ $(document).ready(function() {
     var wins = 0;
     var losses = 0;
     var uniqueCrystalNum = [];
-    var randomNum;
 
     // Add instrutional text in the html page
     $("#instrDiv").appendTo("#instrDivHeader");
