@@ -131,7 +131,6 @@ $(document).ready(function() {
         }
     console.log("userTotalNum " +userTotalNum);
     // prints the users total number
-    totalScoreText.textContent = "Your total score is:"
     $("#totalScore").text(userTotalNum);    
 
 });
