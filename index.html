@@ -9,7 +9,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
@@ -21,50 +20,55 @@
     </div>
     <div class="container">
         <div class="row">
-            <div id="instrDivHeader" class="badge col-6">How to play the game</div>
+            <div id="instrDiv" class="card text-white bg-secondary col-6">
+                <div id="instrDivHeader" class="card-header text-center">How to play the game</div>
+                    <div class="card-body">
+                        <div id="instrDiv">
+                            <p>You will be given a random number at the start of the game.</p>
+                            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                            <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+                            <p>The value of each crystal is hidden from you until you click on it.</p>
+                            <p>Each time when the game starts, the game will change the values of each crystal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="ranMatchNumBox" class="col-sm-3">
+                    <div id="ranMatchNumText" class=""></div>
+                    <div id="ranMatchNum" class=""></div>
+                </div>
+                <div id="winLossNums" class="col-sm-3">
+                    <div class="row">
+                        <div id="winNumText" class="col-sm-3"></div>
+                        <div id="winNum" class="col-sm-3"></div>
+                        <div id="winLoss" class="badge badge-secondary"></div>
+                    </div>
+                    <div class="row">
+                        <div id="lossNumText" class="col-sm-3"></div>
+                        <div id="lossNum" class="col-sm-3"></div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-sm-3">
+                        <div id="totalScoreText"></div>
+                </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
-            <div id="instrDiv" class="col-6"></div>
+            <div id="pinkPearCrystal" class="col-2" value=""></div>
+            <div id="multiCrystal" class="col-2" value=""></div>
+            <div id="turqCrystal" class="col-2"></div>
+            <div id="purpCrystal" class="col-2"></div>
         </div>
     </div>
-<div class="container">
-    <div class="row">
-        <div id="ranMatchNumBox" class="col-md-6">
-            <div class="row">
-                <div id="ranMatchNumText" class="col-md-6"></div>
-                <div id="ranMatchNum" class="col-md-6"></div>
-            </div>
-        </div>
-        <div id="winLossNums" class="col-md-6">
-            <div class="row">
-            <div id="winNumText" class="col-md-3"></div>
-            <div id="winNum" class="col-md-3"></div>
-            <div id="winLoss" class="badge badge-secondary"></div>
-            </div>
-            <div class="row">
-            <div id="lossNumText" class="col-md-3"></div>
-            <div id="lossNum" class="col-md-3"></div>
-            </div>
+    <div class="container">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="totalScore" class="col"></div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div id="pinkPearCrystal" class="col-sm-2 image" value=""></div>
-        <div id="multiCrystal" class="col-sm-2 image" value=""></div>
-        <div id="turqCrystal" class="col-sm-2 image"></div>
-        <div id="purpCrystal" class="col-sm-2 image"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div id="totalScoreText" class="col-lg-12"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div id="totalScore" class="col"></div>
-    </div>
-</div>
 </body>
 </html>

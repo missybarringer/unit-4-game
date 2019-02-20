@@ -5,7 +5,7 @@
 ____________________________________
 ## Technology
 * CSS3, HTML5, Javascript, Bootstrap, jQuery
-* [GitHub Link](https://github.com/missybarringer/unit-4-game.git)
+* [GitHub Repository Link](https://github.com/missybarringer/unit-4-game.git)
 ____________________________________
 ## About - Vandy Bootcamp assignment with the following instructions...
 1. [Watch the demo](https://youtu.be/yNI0l2FMeCk).

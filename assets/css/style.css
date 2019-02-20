@@ -19,18 +19,15 @@ div {
 }
 
 #instrDiv {
-    background-color: rgb(82, 211, 204);
-    margin-top: 40px;
-    font-size: 14px;
-    color: green;
+    font-size: 16px;
     text-align: left;
     padding: 8px;
 }
 
 #instrDivHeader {
-    background-color: rgb(82, 211, 204);
+    background-image: url("../images/dark-honeycomb.png");
     font-size: 22px;
-    color: black;
+    color: white;
     font-style: bold;
     text-align: center;
 }
@@ -39,6 +36,7 @@ div {
     color: black;
     font-size: 24px;
     font-style: bold;
+    height: 100px;
 }
 
 #ranMatchNum {
@@ -54,41 +52,7 @@ div {
     color: black;
     font-size: 24px;
     padding: 8px;
-}
-#pinkPearCrystal.image {
-    content:url(../images/pinkPearCrystal.png);
-    width: 100px;
     height: 100px;
-    top: 10px;
-    bottom: 0px;
-    left: 0px;
-}
-
-#turqCrystal.image {
-    content:url(../images/turqCrystal.png);
-    width: 100px;
-    height: 100px;
-    top: 10px;
-    bottom: 0px;
-    left: 0px;
-}
-
-#multiCrystal.image {
-    content:url(../images/multiCrystal.png);
-    width: 100px;
-    height: 100px;
-    top: 10px;
-    bottom: 0px;
-    left: 0px;
-}
-
-#purpCrystal.image {
-    content:url(../images/purpCrystal.png);
-    width: 100px;
-    height: 100px;
-    top: 10px;
-    bottom: 0px;
-    left: 0px;
 }
 
 #totalScoreText {
