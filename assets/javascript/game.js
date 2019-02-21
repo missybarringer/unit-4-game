@@ -42,15 +42,12 @@ $(document).ready(function() {
     $("#ranMatchNum").text(matchNum);
     
     // print wins * losses
-    $("#winNumText").text("Wins: ");
-    $("#lossNumText").text("Losses:");
-    $("#lossNum").text(losses);
-    $("#winNum").text(wins);
+    $("#lossNum").text("Losses: " + losses);
+    $("#winNum").text("Wins: " + wins);
     
     // reset function gets a new random # for the # to match
     function reset() {
         matchNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        console.log(matchNum);
         $("#ranMatchNum").text(matchNum);
         //reset the user's total number
         userTotalNum = 0;
@@ -94,12 +91,7 @@ $(document).ready(function() {
     // function adds the crystalValue to the user total number
     function getCrystalEvent(crystalKey) {
         return function () {
-            console.log(crystalValue[1]);
-            console.log(crystalValue[2]);
-            console.log(crystalValue[3]);
-            console.log(crystalValue[4]);
             userTotalNum = userTotalNum + crystalValue[crystalKey];
-            console.log("new user total:" + userTotalNum);
             $("#totalScore").text(userTotalNum);
             // if users total number is greater than the number to match it goes to the loser function
             if (userTotalNum > matchNum) {
@@ -110,26 +102,22 @@ $(document).ready(function() {
                 (userTotalNum === matchNum) {
                 winner();
                 }
-            console.log("unique event # " +matchNum);
-            console.log("losses " +losses);
-            console.log("wins " + wins);
         }
     }
     // increments losses total & prints new # and You lost !!! message
     function loser() {
         losses++;
-        $("#lossNum").text(losses);
+        $("#lossNum").text("Losses:   " + losses);
         $("#winLoss").text("You lost !!!");
         reset()
         }
     // increments wins total & prints new # and You WIN !!!! message
     function winner() {
         wins++;
-        $("#winNum").text(wins);
+        $("#winNum").text("Wins:   " + wins);
         $("#winLoss").text("You WIN !!!!");
         reset()
         }
-    console.log("userTotalNum " +userTotalNum);
     // prints the users total number
     $("#totalScore").text(userTotalNum);    
 
