@@ -51,6 +51,11 @@ div {
     font-style: bold;
 }
 
+#winLoss {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
 #winLossNums {
     background-color: rgb(204, 129, 211);
     color: #333;
