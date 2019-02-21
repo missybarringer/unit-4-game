@@ -14,7 +14,7 @@ body {
 }
 
 div {
-    color: black;
+    color: #333;
     font-size: 18px;
 }
 
@@ -38,26 +38,22 @@ div {
 }
 #ranMatchNumBox {
     background-color: #93f1f9;
-    color: black;
+    color: #333;
     font-size: 24px;
     font-style: bold;
     height: 100px;
 }
 
 #ranMatchNum {
-    color: black;
-    font-size: 24px;
+    margin-top: 12px;
+    color: #333;
+    font-size: 28px;
     font-style: bold;
-}
-
-#winLoss {
-    margin-left: 20px;
-    margin-top: 10px;
 }
 
 #winLossNums {
     background-color: rgb(204, 129, 211);
-    color: black;
+    color: #333;
     font-size: 24px;
     height: 100px;
 }

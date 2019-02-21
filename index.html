@@ -7,17 +7,20 @@
     <title>CrystalCollector Game</title>
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Added a link to Bootstrap-->
+    <!-- Added a link to Bootstrap - reset.css not needed since bootstrap does that for you-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Added links to css stylesheet and javascript file-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
+    <!-- First row with the title header -->
     <div class="container">
         <div class="row">
             <div id="gameHeader" class="badge col-12">Crystal Collector</div>
         </div> 
     </div>
+    <!-- Main body content with instructions on the left half of bootstrap layout-->
     <div class="container">
         <div class="row">
             <div id="instrDiv" class="card text-white bg-secondary col-6">
@@ -30,24 +33,32 @@
                         <p>Each time when the game starts, the game will change the values of each crystal.</p>
                     </div>
             </div>
+            <!-- Game content on the Right half of the bootstrap layout -->
             <div class="col-sm-6">
+                <!-- Number to Match section & Wins & Losses section are nested in the first row together-->
                 <div class="row">
                     <div id="ranMatchNumBox" class="badge badge-secondary col-sm-6">
+                        <!-- Prints the Number to Match text & random # below it -->
                         <div id="ranMatchNumText" class=""></div>
                         <div id="ranMatchNum" class=""></div>
                     </div>
                     <div id="winLossNums" class="badge badge-secondary col-sm-6">
                         <div class="row">
+                            <!-- Prints the wins total -->
                             <div id="winNum" class="col-sm-3"></div>
                         </div>
+                        <br>
                         <div class="row">
+                            <!-- Prints the losses total -->
                             <div id="lossNum" class="col-sm-3"></div>
                         </div>
                         <div class="row">
+                            <!-- Prints the You win!!!! or You lost!!! badge -->
                             <div id="winLoss" class="badge badge-secondary"></div>
                         </div>
                     </div>
                     <div class="col-12">
+                        <!-- Shows the 4 crystals for the game -->
                         <div class="row crystals">
                             <div id="pinkPearCrystal" class="col-3" value=""></div>
                             <div id="multiCrystal" class="col-3" value=""></div>
@@ -57,6 +68,7 @@
                     </div>
                     <div id="totalScoreCard" class="col-sm-12">
                         <div class="row">
+                            <!-- Shows the total score card -->
                             <div id="totalScoreCard" class="card text-white bg-secondary col-sm-6">
                                 <div id="totalScoreText" class="card-header text-center">Your total score</div>
                                 <div class="card-body">
