@@ -39,7 +39,8 @@ ____________________________________
 
 * Each crystal should have a random hidden value between 1 - 12.
 
-#### Vector crystals came from [Freepik](www.freepik.com)
+#### Contributors
+* Vector crystals came from [Freepik](https://www.freepik.com/)
 ____________________________________
 ## License
 *This product is licensed under the MIT License (MIT).
